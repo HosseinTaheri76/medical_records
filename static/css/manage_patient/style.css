@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'BNazanin';
+    src: url('fonts/BNazanin.eot') format('eot');
+    src: url('fonts/BNazanin.ttf') format('ttf');
+    src: url('fonts/BNazanin.woff') format('woff');
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+.d-flex{
+    display: flex;
+}
+.show{
+    display: block!important;
+}
+.header{
+    background: linear-gradient(to bottom, rgba(28, 161, 214, 0.1) 0%, rgba(28, 161, 214, 0.7) 100%) no-repeat;
+}
+.main-nav{
+    background: rgb(52,231,211);
+    background: linear-gradient(15deg, rgba(52,231,211,0.8883928571428571) 25%, rgba(7,222,219,0.9248074229691877) 44%, rgba(7,184,195,0.9220063025210083) 67%);
+    padding: 30px 20px;
+}
+.main-nav{
+    justify-content: space-between;
+}
+.md-lg-header-nav{
+    display: none;
+    width: 60%;
+}
+.md-lg-menu{
+    justify-content: space-evenly;
+}
+.md-lg-menu li a{
+    transition: .3s;
+}
+.md-lg-menu li a:hover{
+    color: #e8d2ba;
+}
+.btn-logout,
+.toggle-burger-menu{
+    border: 0;
+    background-color: transparent;
+}
+.toggle-burger-menu{
+    color: rgba(18, 18, 224, .5);
+}
+.btn-logout{
+    color: rgba(224, 42, 18, 0.8);
+}
+.btn-logout:hover{
+    color: rgba(224, 42, 18, 1);
+}
+.user-action{
+    width: 15%;
+    justify-content: space-evenly;
+}
+.patient-name{
+    padding-left: 10px;
+    color: rgba(18, 18, 224, .85);
+}
+.sm-header-nav{
+    display: none;
+    background-color: rgba(75, 199, 227, .5);
+    transition: height .5s;
+}
+.sm-menu{
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 1px;
+}
+.sm-menu li{
+    padding: 10px 0;
+}
+.sm-menu li a{
+    font-family: BNazanin,sans-serif;
+    font-size: 1.1rem;
+    color: rgba(18, 18, 224, .9);
+}
+

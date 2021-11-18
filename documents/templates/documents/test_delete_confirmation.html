@@ -1,0 +1,15 @@
+{% extends 'sc_patient_base.html' %}
+{% block page_title %}
+    حذف کردن آزمایش
+{% endblock %}
+{% block content %}
+    <div class="delete-patient-warning-box d-flex">
+        <h2 class="warning-title">هشدار!</h2>
+        <p class="patient-delete-warning"> آیا اطمینان دارید که می خواهید <b>{{ test }}</b> را حذف کنید؟ </p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-red">حذف کن</button>
+        </form>
+        <button class="btn btn-green" onclick="window.history.back()">بازگشت</button>
+    </div>
+{% endblock %}

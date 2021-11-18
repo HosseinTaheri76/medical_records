@@ -1,0 +1,46 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    عکس ها
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/visits.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="all-main d-flex">
+        <section class="visits-container d-flex">
+            <h3 class="title">
+                <a href="{% url 'create-doc' %}"><i class="fa fa-plus"></i> اضافه کردن سند</a>
+            </h3>
+            <h3 class="form-title">فرم جستجو</h3>
+            <form action="" class="visit-search-form d-flex">
+                {{ form }}
+                <button type="submit">جستجو</button>
+            </form>
+            <section class="visit-list">
+                {% for img_scan in img_scans %}
+                    <article class="visit-item">
+                        <div class="visit-item-row d-flex">
+                            <h3>عنوان :</h3>
+                            <p>{{ img_scan.title }}</p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>تاریخ انجام :</h3>
+                            <p>{{ img_scan.doc_date_jalali }}</p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>فایل عکس :</h3>
+                            <a href="{{ img_scan.file.url }}"><i class="fa fa-link"></i></a>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <a href="{% url 'delete-doc' img_scan.id %}" class="visit-delete"><i class="fa fa-times"
+                                                                  aria-hidden="true"></i></a>
+                            <a href="{% url 'update-doc' img_scan.id %}" class="visit-update"><i class="fa fa-pencil"
+                                                                  aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        </section>
+    </section>
+{% endblock %}

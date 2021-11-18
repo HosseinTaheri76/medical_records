@@ -1,0 +1,33 @@
+{% extends 'sc_patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    انتخاب بیمار
+{% endblock %}
+{% block content %}
+    <section class="select-patient d-flex">
+        <h3 class="logout-link">
+            <a href="{% url 'logout' %}">خروج از حساب</a>
+        </h3>
+        <div class="add-patient d-flex">
+            <h3 class="add-patient-title">
+                <a href="{% url 'create-patient' %}"><i class="fa fa-plus c-green"></i> اضافه کردن بیمار</a>
+            </h3>
+        </div>
+        <div class="patient-list">
+            <ul>
+                {% for patient in patients %}
+                    <li class="patient-item"><a href="#" data-code="{{ patient.code }}"
+                                                onclick="login(this);return false">{{ patient.name }}</a>
+                        <a href="{% url 'delete-patient' patient.id %}" class="patient-delete"><i class="fa fa-times"
+                                                                                                  aria-hidden="true"></i></a>
+                        <a href="{% url 'update-patient' patient.id %}" class="patient-update"><i class="fa fa-pencil"
+                                                                                                  aria-hidden="true"></i></a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'js/sc_patient/script.js' %}"></script>
+{% endblock %}

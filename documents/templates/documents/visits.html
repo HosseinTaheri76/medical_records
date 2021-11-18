@@ -1,0 +1,64 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    مراجعات
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/visits.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="all-main d-flex">
+        <section class="visits-container d-flex">
+            <h3 class="title">
+                <a href="{% url 'create-visit' %}"><i class="fa fa-plus"></i> اضافه کردن مراجعه</a>
+            </h3>
+            <h3 class="form-title">فرم جستجو</h3>
+            <form action="" class="visit-search-form d-flex">
+                {{ form }}
+                <button type="submit">جستجو</button>
+            </form>
+            <section class="visit-list">
+                {% for visit in visits %}
+                    <article class="visit-item">
+                        <div class="visit-item-row d-flex">
+                            <h3>نام پزشک :</h3>
+                            <p>{{ visit.doctor_name }}</p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>دلیل مراجعه :</h3>
+                            <p>{{ visit.reason }}</p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>تاریخ مراجعه :</h3>
+                            <p>{{ visit.visit_date_jalali }}</p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>تاریخ مراجعه بعدی :</h3>
+                            <p>
+                                {% if visit.next_visit_jalali %}
+                                    {{ visit.next_visit_jalali }}
+                                {% else %}
+                                    نا مشخص
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>تصویر نسخه :</h3>
+                            {% if visit.get_file_url %}
+                                <a href="{{ visit.file.url }}"><i class="fa fa-link"></i></a>
+                            {% else %}
+                                <p>وارد نشده</p>
+                            {% endif %}
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <a href="{% url 'delete-visit' visit.id %}" class="visit-delete"><i class="fa fa-times"
+                                                                                                aria-hidden="true"></i></a>
+                            <a href="{% url 'update-visit' visit.id %}" class="visit-update"><i class="fa fa-pencil"
+                                                                                                aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        </section>
+    </section>
+{% endblock %}

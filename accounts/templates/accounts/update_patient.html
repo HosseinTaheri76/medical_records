@@ -1,0 +1,26 @@
+{% extends 'sc_patient_base.html' %}
+{% block page_title %}
+    ویرایش بیمار
+{% endblock %}
+{% block content %}
+
+    <section class="select-patient d-flex">
+        <div class="add-patient d-flex">
+            <h3 class="add-patient-title create-patient-title">
+                ویرایش کردن بیمار
+            </h3>
+        </div>
+        <form action="" method="post" class="patient-create-form d-flex">
+            {% csrf_token %}
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}
+            <button type="submit">ویرایش</button>
+        </form>
+        <div class="form-errors">
+            {% for error in form.name.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

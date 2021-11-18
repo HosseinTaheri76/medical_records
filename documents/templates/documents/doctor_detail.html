@@ -1,0 +1,41 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    اطلاعات پزشک
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/doctors.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="doctors d-flex">
+        <section class="select-patient d-flex">
+            <div class="add-patient d-flex">
+                <h3 class="add-patient-title">
+                    {{ doctor.name }}
+                </h3>
+            </div>
+            <div class="dr-more-info d-flex">
+                <div class="dr-info-item d-flex">
+                    <h3>شماره پرنده :</h3>
+                    <p>
+                        {% if doctor.file_no %}
+                            {{ doctor.file_no }}
+                        {% else %}
+                             وارد نشده
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="dr-info-item d-flex">
+                    <h3>شماره مطب :</h3>
+                    <p>
+                        {% if doctor.clinic_phone %}
+                            {{ doctor.clinic_phone }}
+                        {% else %}
+                             وارد نشده
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}

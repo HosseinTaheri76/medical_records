@@ -1,0 +1,34 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    ویرایش کردن پزشک
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/doctors.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="doctors d-flex">
+        <section class="select-patient d-flex">
+            <div class="add-patient d-flex">
+                <h3 class="add-patient-title">
+                    ویرایش پزشک
+                </h3>
+            </div>
+            <form action="" method="post" class="patient-create-form d-flex">
+                {% csrf_token %}
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                {{ form.name }}
+                <label for="{{ form.file_no.id_for_label }}">{{ form.file_no.label }}</label>
+                {{ form.file_no }}
+                <label for="{{ form.clinic_phone.id_for_label }}">{{ form.clinic_phone.label }}</label>
+                {{ form.clinic_phone }}
+                <button type="submit">ویرایش</button>
+            </form>
+            <div class="form-errors">
+                {% for error in form.non_field_errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+{% endblock %}

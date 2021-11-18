@@ -1,0 +1,20 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    ویرایش کردن سند
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/visits.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="all-main d-flex">
+    <section class="visits-container d-flex">
+        <h3 class="title">ویرایش کردن سند</h3>
+        <form action="" method="post" class="add-visit-form d-flex" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">ویرایش کردن</button>
+        </form>
+    </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'sc_patient_base.html' %}
+{% block page_title %}
+    ورود به سایت
+{% endblock %}
+{% block style %}
+    <style>
+        .patient-create-form {
+            flex-direction: column;
+        }
+        .patient-create-form > *{
+            margin: 5px 0;
+        }
+        .lr-prompt{
+            margin-bottom: 15px;
+            font-size: 20px;
+            color:  #2c81c7;
+        }
+        .lr-prompt:hover{
+            color: #1d6142;
+        }
+    </style>
+
+{% endblock %}
+{% block content %}
+
+    <section class="select-patient d-flex">
+        <div class="add-patient d-flex">
+            <h3 class="add-patient-title create-patient-title">
+                فرم ورود به سایت
+            </h3>
+        </div>
+        <form action="" method="post" class="patient-create-form d-flex">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">ورود</button>
+        </form>
+        <a href="{% url 'register' %}" class="lr-prompt">ثبت نام کنید</a>
+    </section>
+
+{% endblock %}

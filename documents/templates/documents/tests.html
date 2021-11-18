@@ -1,0 +1,42 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+    آزمایشات
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/visits.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="all-main d-flex">
+        <section class="visits-container d-flex">
+            <h3 class="title">
+                <a href="{% url 'create-test' %}"><i class="fa fa-plus"></i> اضافه کردن آزمایش</a>
+            </h3>
+            <h3 class="form-title">فرم جستجو</h3>
+            <form action="" class="visit-search-form d-flex">
+                {{ form }}
+                <button type="submit">جستجو</button>
+            </form>
+            <section class="visit-list">
+                {% for test in tests %}
+                    <article class="visit-item">
+                        <div class="visit-item-row d-flex">
+                            <h3>تاریخ آزمایش :</h3>
+                            <p>{{ test.test_date_jalali }}</p>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <h3>فایل آزمایش :</h3>
+                            <a href="{{ test.file.url }}"><i class="fa fa-link"></i></a>
+                        </div>
+                        <div class="visit-item-row d-flex">
+                            <a href="{% url 'delete-test' test.id %}" class="visit-delete"><i class="fa fa-times"
+                                                                  aria-hidden="true"></i></a>
+                            <a href="{% url 'update-test' test.id %}" class="visit-update"><i class="fa fa-pencil"
+                                                                  aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        </section>
+    </section>
+{% endblock %}

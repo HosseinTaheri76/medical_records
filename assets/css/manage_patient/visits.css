@@ -1,0 +1,114 @@
+.all-main{
+    justify-content: center;
+}
+.visits-container{
+    flex-direction: column;
+    border: 2px solid rgba(24, 150, 196, 0.8);
+    border-radius: 5px;
+    margin: 10px;
+    width: calc(100% - 20px);
+    background-color: rgba(28, 214, 189, 0.2);
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+}
+.add-visit-form{
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+.add-visit-form input,
+.add-visit-form select,
+.add-visit-form textarea,
+.visit-search-form input{
+    margin: 5px 0;
+    padding: 8px 10px;
+    outline: 0;
+    border: 2px solid rgb(24, 150, 196);
+    background-color: rgba(28, 161, 214, 0.1);
+    border-radius: 5px;
+    width: 100%;
+
+}
+.add-visit-form label,
+.visit-search-form label{
+    color: #052636;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.add-visit-form button,
+.visit-search-form button{
+    padding: 11px 20px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-color: #268c82;
+    font-size: 16px;
+    transition: background-color .3s;
+    margin-top: 20px;
+}
+.add-visit-form textarea{
+    height: 150px;
+}
+.title{
+    color: #268c82;
+    padding: 10px 0;
+    font-size: 25px;
+    border-bottom: 1px solid rgba(17, 168, 110, 0.8);
+}
+.add-visit-form button:hover{
+    background-color: rgb(24, 150, 196);
+}
+.title a {
+    color: #268c82;
+    transition: color .3s;
+}
+
+.title a:hover {
+    color: rgb(28, 161, 214);
+}
+.visit-list{
+    width: 90%;
+}
+.visit-item{
+    font-family: BNazanin, sans-serif;
+    width: 100%;
+    border-bottom: 2px solid rgb(24, 150, 196);
+    padding: 10px 5px;
+}
+.visit-item h3{
+
+    font-size: 21px;
+    font-weight: 600;
+    color: #2e43c9;
+    padding-left: 5px;
+}
+
+.visit-delete i:hover{
+    color: rgba(224, 42, 18, 1);
+}
+.visit-delete i{
+    color: rgba(224, 42, 18, 0.8);
+    transition: .2s;
+}
+.visit-update{
+    margin-right: 10px;
+}
+.visit-update i:hover{
+    color: rgba(191, 104, 11, 1);
+}
+.visit-update i{
+    color: rgba(191, 104, 11, 0.8);
+    transition: .2s;
+}
+.visit-search-form{
+    flex-direction: column!important;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(24, 150, 196);
+}
+.form-title{
+    margin-top: 20px;
+    color: #2e43c9;
+}

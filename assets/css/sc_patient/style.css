@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.c-green {
+    color: green;
+}
+
+body {
+    background: linear-gradient(to bottom, rgba(28, 161, 214, 0.1) 0%, rgba(28, 161, 214, 0.7) 100%) no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-patient {
+    flex-direction: column;
+    border: 2px solid rgba(24, 150, 196, 0.8);
+    border-radius: 5px;
+    margin: 10px;
+    width: calc(100% - 20px);
+    background-color: rgba(28, 214, 189, 0.2);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.add-patient {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(17, 168, 110, 0.8);
+}
+
+.add-patient-title {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.add-patient-title a {
+    color: #268c82;
+    transition: color .3s;
+}
+
+.add-patient-title a:hover {
+    color: rgb(28, 161, 214);
+}
+
+.patient-list {
+    width: 100%;
+    padding: 10px;
+
+}
+
+.patient-list li {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 30px 0;
+}
+
+.patient-list li a {
+    color: #1d6142;
+    transition: color .3s;
+}
+
+.patient-list li a:hover {
+    color: #052636;
+}
+.create-patient-title{
+    color: #1d6142;
+}
+.patient-create-form{
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.patient-create-form input{
+    margin: 0 10px;
+    padding: 10px 20px;
+    outline: 0;
+    border: 2px solid rgb(24, 150, 196);
+    background-color: rgba(28, 161, 214, 0.1);
+    border-radius: 5px;
+}
+.patient-create-form label{
+    color: #052636;
+    font-size: 20px;
+}
+.patient-create-form button{
+    padding: 11px 20px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-color: #268c82;
+    font-size: 16px;
+    transition: background-color .3s;
+}
+.patient-create-form button:hover{
+    background-color: rgb(24, 150, 196);
+}
+.form-errors{
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.patient-delete{
+    margin-right: 10px;
+}
+.patient-delete i:hover{
+    color: rgba(224, 42, 18, 1);
+}
+.patient-delete i{
+    color: rgba(224, 42, 18, 0.8);
+    transition: .2s;
+}
+.delete-patient-warning-box{
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.patient-delete-warning{
+    line-height: 25px;
+    color: #268c82;
+    font-size: 17px;
+    font-weight: 600;
+}
+.patient-delete-warning b{
+    color: #003eff;
+    font-weight: 700;
+}
+.warning-title{
+    color: rgba(224, 42, 18, 1);
+    margin-bottom: 10px;
+}
+.btn{
+    margin-top: 15px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fff;
+}
+.btn-red{
+     background-color: rgba(224, 42, 18, .8)
+}
+.btn-green{
+    background-color: #006b1b;
+}
+.patient-update{
+    margin-right: 10px;
+}
+.patient-update i:hover{
+    color: rgba(191, 104, 11, 1);
+}
+.patient-update i{
+    color: rgba(191, 104, 11, 0.8);
+    transition: .2s;
+}
+.logout-link{
+    margin-top: 15px;
+}
+.logout-link a{
+    color: rgba(224, 42, 18, 1);
+}

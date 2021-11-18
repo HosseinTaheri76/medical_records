@@ -1,0 +1,29 @@
+{% extends 'patient_base.html' %}
+{% load static %}
+{% block page_title %}
+پزشکان
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/manage_patient/doctors.css' %}">
+{% endblock %}
+{% block content %}
+<section class="doctors d-flex">
+    <section class="select-patient d-flex">
+    <div class="add-patient d-flex">
+        <h3 class="add-patient-title">
+            <a href="{% url 'create-doctor' %}"><i class="fa fa-plus c-green"></i> اضافه کردن پزشک</a>
+        </h3>
+    </div>
+    <div class="patient-list">
+        <ul>
+            {% for doctor in doctors %}
+            <li class="patient-item"><a href="{% url 'doctor-detail' doctor.id %}">{{ doctor.name }}</a>
+                <a href="{% url 'delete-doctor' doctor.id %}" class="patient-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <a href="{% url 'update-doctor' doctor.id %}" class="patient-update"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+</section>
+{% endblock %}
